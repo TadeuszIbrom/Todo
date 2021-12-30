@@ -1,1 +1,5 @@
 body{background-color: lightgray;}
+
+.taskDone{text-decoration: line-through red;}
+
+}
