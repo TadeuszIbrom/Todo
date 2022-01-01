@@ -9,32 +9,38 @@
     },
     ];
 
-    const removeTask = () => {
-        const removeButtons = document.querySelectorAll(".js-removeTask");
+    const removeTask = (index) => {
+        tasks.splice(index, 1);
+        render()
+    }
 
-        removeButtons.forEach((removeButton, index) => {
-            removeButton.addEventListener("click", () => {
-                tasks.splice(index, 1);
-                render();
-            });
-        }
-        );
 
-    };
 
 
 
     const render = () => {
         let htmlcode = "";
         for (const task of tasks) {
-            htmlcode += `<li ${task.done ? "class=\"taskDone\"" : "class=\"taskUndone\""}>           
-            
+            htmlcode += `<li ${task.done ? "class=\"taskDone\"" : "class=\"taskUndone\""}>                  
             <button class="js-importantTask">Ważne</button>${task.content}<button class="js-removeTask">Usuń</button>
             `;
             document.querySelector(".js-tasksList").innerHTML = htmlcode;
+
+            const removeButtons = document.querySelectorAll(".js-removeTask");
+            removeButtons.forEach
+                ((removeButton, index) => {
+                    removeButton.addEventListener
+                        ("click", () => { removeTask(index); });
+                });
+
+
+
         };
-        removeTask();
-    };
+    }
+
+
+
+
 
 
     const addNewTask = (newTaskContent) => {
@@ -57,12 +63,10 @@
 
 
     const init = () => {
-        render();
 
         const Form = document.querySelector(".js-toDoForm");
-
         Form.addEventListener("submit", onFormSubmit);
-
+        render();
     }
     init();
 
