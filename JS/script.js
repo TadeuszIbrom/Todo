@@ -52,11 +52,12 @@
             htmlcode += `<li ${task.done ? "class=\"taskDone\"" : "class=\"taskUndone\""}>                  
             <button class="js-importantTask">Ważne</button>---<button class="js-taskDone">Zrobione</button>${task.content}<button class="js-removeTask">Usuń</button>
             `;
-            document.querySelector(".js-tasksList").innerHTML = htmlcode;
-
-           bindEvents();
+            
 
         };
+        document.querySelector(".js-tasksList").innerHTML = htmlcode;
+
+           bindEvents();
     }
 
 
