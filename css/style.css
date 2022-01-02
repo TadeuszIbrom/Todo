@@ -1,5 +1,100 @@
-body{background-color: lightgray;}
-
-.taskDone{text-decoration: line-through red;}
-
+.body {
+  background-color: lightgray;
+  width: 80%;
+  margin: 10px auto;
 }
+
+.formContainer {
+  background-color: white;
+}
+.tasksContainer {
+  background-color: white;
+}
+
+.formContainer__h3 {
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(163, 162, 162);
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form__addTask {
+  min-width: 75%;
+  margin: 0 20px;
+}
+.form__addTaskButton {
+  background-color: cadetblue;
+  color: white;
+  border-radius: 3px;
+  padding: 2px;
+}
+Button:hover {
+  cursor: pointer;
+}
+
+.tasksContainer__h3 {
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(163, 162, 162);
+}
+.taskContent {
+  display: inline-block;
+  width: 60%;
+}
+.taskList {
+  list-style-type: none;
+}
+.button {
+  margin: 5px;
+}
+
+.taskDone > .taskContent {
+  text-decoration: line-through red;
+}
+@media (max-width: 764px) {
+  .body {
+    width: 96%;
+  }
+  .form__addTask {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .form__addTaskButton {
+    width: 100%;
+  }
+}
+.importantTask .fa-exclamation {
+  color: red;
+  background-color: unset;
+  width: 20px;
+}
+.importantTask:hover {
+  background-color: red;
+  color: white;
+}
+.importantTask:hover .fa-exclamation {
+  color: white;
+}
+
+.done  {
+  background-color: forestgreen;
+  color: white;
+}
+.done:hover{
+  background-color: white;
+  color: green;
+}
+
+.removeTask {
+  background-color: black;
+  color: white;
+}
+.removeTask:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
