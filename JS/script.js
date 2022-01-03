@@ -27,15 +27,11 @@
         tasks[index].done = !tasks[index].done;
         render()
     }
-    const toogleImportentTask = (index) => {
-        console.log(tasks)
+    const toggleImportentTask = (index) => {
         tasks[index].importent = !tasks[index].importent;
-        
-        if (tasks[index].importent === true) {
-            const importentTask = document.querySelectorAll(".task");
-            importentTask[index].classList.toggle("importanttask");
-        } return;
-render()
+        const importentTask = document.querySelectorAll(".task");
+        importentTask[index].classList.toggle("important");
+        render()
 
     }
 
@@ -55,12 +51,8 @@ render()
             });
 
 
-        const importantTasks = document.querySelectorAll(".importantTask");
-        importantTasks.forEach
-            ((importantTask, index) => {
-                importantTask.addEventListener
-                    ("click", () => { toogleImportentTask(index); });
-            });
+       
+
     }
 
 
@@ -72,17 +64,16 @@ render()
             htmlcode += `<li ${task.done ? "class=\"task taskDone\"" : "class=\"task taskUndone\""}>                  
             <button class="button importantTask js-importantTask"><i class="fa fa-exclamation" aria-hidden="true"></i>
             </button>
-            <button class="button done js-taskDone"><i class="fa fa-check" aria-hidden="true"></i>
+            <button class="button taskDone js-taskDone"><i class="fa fa-check" aria-hidden="true"></i>
             </button>
             <span class="taskContent">${task.content}</span>
             <button  class="button  removeTask js-removeTask"><i class="fas fa-trash"></i></button>
             `;
-
-
-        };
+                };
         document.querySelector(".js-tasksList").innerHTML = htmlcode;
-
         bindEvents();
+
+
     }
 
 
@@ -104,11 +95,9 @@ render()
 
 
     const init = () => {
-
         const Form = document.querySelector(".js-toDoForm");
         Form.addEventListener("submit", onFormSubmit);
         render();
-        bindEvents();
     }
     init();
 
