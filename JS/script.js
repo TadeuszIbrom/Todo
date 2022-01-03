@@ -29,9 +29,7 @@
     }
     const toggleImportentTask = (index) => {
         tasks[index].importent = !tasks[index].importent;
-        const importentTask = document.querySelectorAll(".task");
-        importentTask[index].classList.toggle("important");
-        render()
+              render()
 
     }
 
@@ -66,7 +64,17 @@
     const render = () => {
         let htmlcode = "";
         for (const task of tasks) {
-            htmlcode += `<li ${task.done ? "class=\"task taskDone\"" : "class=\"task taskUndone\""}>                  
+            if (task.importent === true) {
+                htmlcode += `<li ${task.done ? "class=\"task important taskDone\"" : "class=\"task important taskUndone\""}>                  
+            <button class="button importantTask js-importantTask"><i class="fa fa-exclamation" aria-hidden="true"></i>
+            </button>
+            <button class="button taskDone js-taskDone"><i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <span class="taskContent">${task.content}</span>
+            <button  class="button  removeTask js-removeTask"><i class="fas fa-trash"></i></button>
+            `
+            } else {
+                htmlcode += `<li ${task.done ? "class=\"task taskDone\"" : "class=\"task taskUndone\""}>                  
             <button class="button importantTask js-importantTask"><i class="fa fa-exclamation" aria-hidden="true"></i>
             </button>
             <button class="button taskDone js-taskDone"><i class="fa fa-check" aria-hidden="true"></i>
@@ -74,7 +82,14 @@
             <span class="taskContent">${task.content}</span>
             <button  class="button  removeTask js-removeTask"><i class="fas fa-trash"></i></button>
             `;
-                };
+
+            }
+
+
+
+
+
+        };
         document.querySelector(".js-tasksList").innerHTML = htmlcode;
         bindEvents();
 
