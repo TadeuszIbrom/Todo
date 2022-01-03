@@ -51,7 +51,12 @@
             });
 
 
-       
+        const importantTasks = document.querySelectorAll(".js-importantTask");
+        importantTasks.forEach
+            ((importantTask, index) => {
+                importantTask.addEventListener
+                    ("click", () => { toggleImportentTask(index); });
+            });
 
     }
 
