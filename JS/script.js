@@ -29,7 +29,7 @@
     }
     const toggleImportentTask = (index) => {
         tasks[index].importent = !tasks[index].importent;
-              render()
+        render()
 
     }
 
@@ -65,25 +65,22 @@
         let htmlcode = "";
         for (const task of tasks) {
             if (task.importent === true) {
-                htmlcode += `<li ${task.done ? "class=\"task important taskDone\"" : "class=\"task important taskUndone\""}>                  
-            <button class="button importantTask js-importantTask"><i class="fa fa-exclamation" aria-hidden="true"></i>
-            </button>
-            <button class="button taskDone js-taskDone"><i class="fa fa-check" aria-hidden="true"></i>
-            </button>
+                htmlcode += `<li ${task.done ? "class=\"toDo__task toDo--important taskDone\"" : "class=\"toDo__task toDo--important taskUndone\""}>                  
+            <button class="button btn--importantTask js-importantTask">!</button>
+            <button class="button btn-taskDone js-taskDone">✔</button>
             <span class="taskContent">${task.content}</span>
-            <button  class="button  removeTask js-removeTask"><i class="fas fa-trash"></i></button>
+            <button  class="button  btn--removeTask js-removeTask"><i class="fas fa-trash"></i></button>
             `
             } else {
-                htmlcode += `<li ${task.done ? "class=\"task taskDone\"" : "class=\"task taskUndone\""}>                  
-            <button class="button importantTask js-importantTask"><i class="fa fa-exclamation" aria-hidden="true"></i>
-            </button>
-            <button class="button taskDone js-taskDone"><i class="fa fa-check" aria-hidden="true"></i>
-            </button>
+                htmlcode += `<li ${task.done ? "class=\"toDo__task taskDone\"" : "class=\"toDo__task taskUndone\""}>                  
+            <button class="button btn--importantTask js-importantTask"></button>
+            <button class="button btn-taskDone js-taskDone">✔</button>
             <span class="taskContent">${task.content}</span>
-            <button  class="button  removeTask js-removeTask"><i class="fas fa-trash"></i></button>
+            <button  class="button  btn--removeTask js-removeTask"><i class="fas fa-trash"></i></button>
             `;
 
             }
+
 
 
 
@@ -105,13 +102,19 @@
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        const newTaskElement = document.querySelector(".js-addContent");
+        const newTaskContent = newTaskElement.value.trim();
 
-        const newTaskContent = document.querySelector(".js-addTask").value.trim();
-        if (newTaskContent === "") {
-            return;
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
         }
-        addNewTask(newTaskContent);
+        newTaskElement.focus();
+
     }
+
+
+
 
 
     const init = () => {
@@ -119,6 +122,7 @@
         Form.addEventListener("submit", onFormSubmit);
         render();
     }
+
     init();
 
 };

@@ -7,35 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista zadań</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="JS/script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/toDo.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/taskList.css">
+
+
+
+    <script src="JS/script.js" defer>
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/979f3a7fc5.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="body">
-    <h1>Lista zadań</h1>
+
+    <section id="toDo" class="toDo">
+        <h1>Lista zadań</h1>
+
+        <div class="toDo__body">
+            <header class="toDo__header">
+                <h3>Dodaj zadanie.</h3>
+            </header>
+            <form class="form js-toDoForm">
+                <input type="text" class="form__addContent js-addContent">
+                <button class="form__addTaskButton">Dodaj zadanie</button>
+            </form>
 
 
 
-
-    <section id="toDoForm" class="formContainer">
-
-        <h3 class="formContainer__h3">Dodaj zadanie.</h3>
-        <form class="toDoform js-toDoForm">
-            <input type="text" class="form__addContent js-addTask">
-            <button class="form__addTaskButton">Dodaj zadanie</button>
-        </form>
+        </div>
 
 
     </section>
-    <section id="toDoList" class="tasksContainer">
 
-            <h3 class="tasksContainer__h3">lista zadań</h3>
-            <ul class="taskList js-tasksList">           </ul>
+    <section id="toDoList" class="toDo">
+
+        <div class="toDo__body">
+            <header class="toDo__header">
+                <h3>lista zadań</h3>
+            </header>
+            <ul class="toDo__taskList js-tasksList"> </ul>
 
 
 
 
+        </div>
     </section>
 
 </body>
