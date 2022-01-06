@@ -30,7 +30,6 @@
     const toggleImportentTask = (index) => {
         tasks[index].importent = !tasks[index].importent;
         render()
-
     }
 
     bindEvents = () => {
@@ -58,48 +57,28 @@
 
     }
 
-
-
-
     const render = () => {
         let htmlcode = "";
         for (const task of tasks) {
             if (task.importent === true) {
                 htmlcode += `<li ${task.done ? "class=\"toDo__task toDo--important taskDone\"" : "class=\"toDo__task toDo--important taskUndone\""}>                  
             <button class="button btn--importantTask js-importantTask">!</button>
-            <button class="button btn-taskDone js-taskDone">✔</button>
+            <button class="button btn--taskDone js-taskDone">✔</button>
             <span class="taskContent">${task.content}</span>
             <button  class="button  btn--removeTask js-removeTask"><i class="fas fa-trash"></i></button>
-            `
-            } else {
-                htmlcode += `<li ${task.done ? "class=\"toDo__task taskDone\"" : "class=\"toDo__task taskUndone\""}>                  
+            `}
+            else {               
+                 htmlcode += `<li ${task.done ? "class=\"toDo__task taskDone\"" : "class=\"toDo__task taskUndone\""}>                  
             <button class="button btn--importantTask js-importantTask"></button>
-            <button class="button btn-taskDone js-taskDone">✔</button>
+            <button class="button btn--taskDone js-taskDone">✔</button>
             <span class="taskContent">${task.content}</span>
             <button  class="button  btn--removeTask js-removeTask"><i class="fas fa-trash"></i></button>
             `;
-
             }
-
-
-
-
-
-
         };
         document.querySelector(".js-tasksList").innerHTML = htmlcode;
         bindEvents();
-
-
     }
-
-
-
-
-
-
-
-
     const onFormSubmit = (event) => {
         event.preventDefault();
         const newTaskElement = document.querySelector(".js-addContent");
@@ -110,13 +89,8 @@
             newTaskElement.value = "";
         }
         newTaskElement.focus();
-
     }
-
-
-
-
-
+    
     const init = () => {
         const Form = document.querySelector(".js-toDoForm");
         Form.addEventListener("submit", onFormSubmit);
