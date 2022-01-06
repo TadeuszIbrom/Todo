@@ -1,6 +1,6 @@
 # "to do" tiny application
 
-![Crop-Factor-Calculator](/images/todo.png)
+![To Do](/images/todo.png)
 ## Demo
 https://tadeuszibrom.github.io/Todo/
 
