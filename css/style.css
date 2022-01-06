@@ -1,6 +1,5 @@
 *, ::after, ::before{box-sizing: border-box;}
 
-
 .body {
   background-color: lightgray;
 }
@@ -8,6 +7,4 @@
 Button:hover {
   cursor: pointer;
 }
-
-
-
+.header{margin: 30px 30px;}
