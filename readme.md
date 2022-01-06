@@ -1,6 +1,6 @@
 # "to do" tiny application
 
-![To Do](/images/todo.png)
+![To Do](/images/todo.jpg)
 ## Demo
 https://tadeuszibrom.github.io/Todo/
 
