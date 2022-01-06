@@ -13,76 +13,83 @@ ul .toDo__taskList {
   border: 1px solid lightgray;
   padding: 5px;
 }
-.toDo__task{
-    display: flex;
-    margin: 5px 0;
-    align-items: center;
-    justify-content: center;
-  
+.toDo__task {
+  display: flex;
+  margin: 5px 0;
+  align-items: center;
+  justify-content: center;
 }
 .button {
-    margin: 5px;
-    width: 30px;
-    height: 30px;
-  }
-  .taskDone > .taskContent {
-    text-decoration: line-through red;
-    color: rgba(0, 0, 0, 0.281);
-  }  
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+}
+.taskDone > .taskContent {
+  text-decoration: line-through red;
+  color: rgba(0, 0, 0, 0.281);
+}
 
-    .toDo--important{
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 16px;
-
-  }
-  .toDo--important .taskContent{    border: 2px solid red;
-  }
-
-
+.toDo--important {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 16px;
+}
+.toDo--important .taskContent {
+  border: 2px solid red;
+}
 
 /*BTN IMPORTANT*/
-.btn--importantTask  {
-    background-color: red;
-    color: white;
-  width:  30px;
+
+.btn--importantTask {
+  background-color: red;
+  color: white;
+  width: 30px;
   height: 30px;
 }
 
 .btn--importantTask:hover {
   background-color: rgba(255, 0, 0, 0.644);
-
 }
 .btn--importantTask:active {
   background-color: rgba(255, 0, 0, 0.335);
-
 }
+
 /*BTN TaskDone*/
-.btn-taskDone  {
+
+.btn--taskDone {
   background-color: forestgreen;
   color: green;
- 
 }
-.btn-taskDone:hover{
+.btn--taskDone:hover {
   background-color: white;
   color: green;
 }
+.btn--taskDone:active {
+  background-color: white;
+  color: green;
+  font-weight: bold;
+}
 
-.taskDone .btn-taskDone  {
+.taskDone .btn-taskDone {
   color: white;
 }
-.taskdone .btn-taskDone{
+.taskdone .btn-taskDone {
   color: white;
 }
-.toDo--important .taskDone .taskContent{
-  background-color: yellow;
-}
+
 /*BtN Remove Task*/
+
 .btn--removeTask {
   color: black;
 }
 .btn--removeTask:hover {
   cursor: pointer;
   background-color: black;
+  color: white;
+}
+
+.btn--removeTask:active {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.513);
   color: white;
 }
